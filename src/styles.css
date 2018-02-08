@@ -1,0 +1,32 @@
+html, body {
+    min-height: 400vh;
+}
+
+.jigsawAnim {
+    position: fixed;
+    text-align: center;
+}
+
+.jigsawAnim > * {
+    position: relative;
+    display: inline-block;
+    top: 0;
+    font-size: 5em;
+    padding: 0.5em;
+}
+
+.jigsawAnim > *:nth-child(4n+1) {
+    background: red;
+}
+
+.jigsawAnim > *:nth-child(4n+2) {
+    background: green;
+}
+
+.jigsawAnim > *:nth-child(4n+3) {
+    background: blue;
+}
+
+.jigsawAnim > *:nth-child(4n+4) {
+    background: purple;
+}
