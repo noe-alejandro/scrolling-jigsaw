@@ -11,8 +11,8 @@ const UglifyWebpackPlugin = require('uglifyjs-webpack-plugin');
 const autoprefixer = () => ({
   loader: 'postcss-loader',
   options: {
-    plugins: () => [require('autoprefixer')],
-  },
+    plugins: () => [require('autoprefixer')]
+  }
 });
 
 const config = {
@@ -20,7 +20,7 @@ const config = {
 
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: 'bundle.js',
+    filename: 'bundle.js'
   },
 
   module: {
@@ -34,12 +34,12 @@ const config = {
               loader: 'css-loader',
               options: {
                 importLoaders: 1,
-                minimize: true,
-              },
+                minimize: true
+              }
             },
-            autoprefixer(),
-          ],
-        }),
+            autoprefixer()
+          ]
+        })
       },
       {
         test: /\.(png|jpg|jpeg)$/,
@@ -49,42 +49,42 @@ const config = {
             options: {
               publicPath: path.resolve(__dirname, 'src/images/'),
               name: '[name].[ext]',
-              outputPath: 'images/',
-            },
+              outputPath: 'images/'
+            }
           },
           {
-            loader: 'image-webpack-loader',
-          },
-        ],
+            loader: 'image-webpack-loader'
+          }
+        ]
       },
-      { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
-    ],
+      { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' }
+    ]
   },
 
   plugins: [
     new UglifyWebpackPlugin({
       exclude: /node_modules/,
-      sourceMap: false,
+      sourceMap: false
     }),
     new HtmlWebpackPlugin({
       title: 'project',
       template: './src/index.html',
       filename: 'index.html',
       minify: {
-        collapseWhitespace: false,
-      },
+        collapseWhitespace: false
+      }
     }),
     new ExtractTextPlugin({
-      filename: 'styles.css',
+      filename: 'styles.css'
     }),
-    new CleanWebpackPlugin(['build']),
+    new CleanWebpackPlugin(['build'])
   ],
 
   devServer: {
     // contentBase: path.join(__dirname, 'build'),
     compress: false,
-    port: 9000,
-  },
+    port: 9000
+  }
 };
 
 module.exports = config;
