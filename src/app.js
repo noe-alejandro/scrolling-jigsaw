@@ -1,5 +1,5 @@
 const App = () => {
-  const cssRef = '.jigsawAnim > *';
+  const cssRef = '.jigsaw-container > *';
   const nodes = document.querySelectorAll(cssRef);
 
   for (let i = 0; i < nodes.length; i += 1) {
@@ -8,9 +8,7 @@ const App = () => {
   }
 
   window.addEventListener('scroll', () => {
-    // const nodes = document.querySelectorAll(cssRef);
     for (let i = 0; i < nodes.length; i += 1) {
-      // console.log('window scrollY:', window.scrollY);
       const speed = window.scrollY / parseInt(nodes[i].getAttribute('data-speed'), 10);
 
       nodes[i].style.transform = `rotate(${speed}deg)`;

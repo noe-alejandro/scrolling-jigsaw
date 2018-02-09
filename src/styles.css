@@ -1,32 +1,55 @@
-html, body {
-  min-height: 400vh;
+html {
+  min-height: 300vh;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
 
-.jigsawAnim {
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 300vh;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  height: 100vh;
+}
+
+.jigsaw-container {
   position: fixed;
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
 }
 
-.jigsawAnim > * {
+.jigsaw-container > * {
   position: relative;
   display: inline-block;
+  border: 5px solid mistyrose;
   top: 0;
   font-size: 5em;
   padding: 0.5em;
 }
 
-.jigsawAnim > *:nth-child(4n+1) {
-  background: red;
+.jigsaw-container > *:nth-child(4n+1) {
+  background: #B18FCF;
 }
 
-.jigsawAnim > *:nth-child(4n+2) {
-  background: green;
+.jigsaw-container > *:nth-child(4n+2) {
+  background: #978897;
 }
 
-.jigsawAnim > *:nth-child(4n+3) {
-  background: blue;
+.jigsaw-container > *:nth-child(4n+3) {
+  background: #494850;
 }
 
-.jigsawAnim > *:nth-child(4n+4) {
-  background: purple;
+.jigsaw-container > *:nth-child(4n+4) {
+  background: #D8D8F6;
 }
